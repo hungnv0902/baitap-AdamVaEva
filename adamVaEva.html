@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function human(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+
+            this.getGender = function () {
+                document.write("I'm " + this.gender + "</br>")
+            }
+
+            this.getName = function () {
+                document.write("I'm " + this.name + "</br>");
+            };
+
+            this.setName = function (nameset) {
+                this.name = nameset;
+            }
+
+            this.eat = function (Apple) {
+                if (Apple.weight > 0) {
+                Apple.weight --;
+                this.weight ++;
+                } else {
+                   document.write("An het tao roi" + "</br>")
+                }
+
+            }
+
+            this.say = function (say) {
+                document.write(say);
+            }
+
+            this.getWeight = function () {
+                document.write("Can nang cua " + this.name + " " + this.weight + "</br>" )
+            }
+        }
+
+        function apple(weight) {
+            this.weight = weight;
+
+            this.getweight = function () {
+                document.write("Can nang cua tao la " + this.weight +"</br>")
+            }
+
+        }
+
+        let Adam = new human("Adam", "Male", 60);
+        let Eva = new human("Eva", "Sale" , 50);
+        let Apple = new apple(10);
+
+        Adam.getName();
+        Adam.getGender();
+
+        for (let i = 1; i < 12; i ++) {
+            if (i % 2 == 0) {
+                Adam.eat(Apple);
+                Adam.getWeight();
+                Apple.getweight()
+            } else {
+                Eva.eat(Apple);
+                Eva.getWeight();
+                Apple.getweight()
+            }
+        }
+    </script>
+</body>
+</html>
